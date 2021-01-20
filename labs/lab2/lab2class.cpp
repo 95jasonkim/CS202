@@ -1,8 +1,5 @@
 /**/
 #include "lab2class.hpp"
-#include<iostream>
-using std::cout;
-using std::endl;
 
 Lab::Lab()
 {
@@ -22,4 +19,27 @@ Lab::Lab(int a, int b):_one(a), _two(b)
 Lab::~Lab()
 {
 	cout << "Called destructor" << endl;
+}
+
+void Lab::setOne(int a)
+{
+	cout << "one is now" << a<< endl;
+	_one = a;
+}
+
+void Lab::setAsSum(int& ab)
+{
+	ab = _one+_two;
+	cout << "Value is now " << _one +_two << endl;
+}
+
+void Lab::setTwo(const int& abc)
+{
+	cout << "two is now " << abc << endl;
+	_two = abc;
+}
+
+int Lab::getSum()
+{
+	return _one + _two;
 }
