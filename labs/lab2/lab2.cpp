@@ -6,6 +6,23 @@ CS202 lab2
 #include<vector>
 using std::vector;
 
+void passValue(Lab l)
+{
+	cout << "The sum is " << l.getSum() << endl;
+}
+
+void passRef(Lab &l)
+{
+	l.setOne(0);
+	l.setTwo(0);
+	cout << "Both values set to 0" << endl;
+}
+
+Lab passConstRef(const Lab &l)
+{
+	Lab reverse(l.getTwo(), l.getOne());
+	return reverse;
+}
 
 int main()
 {
@@ -13,20 +30,18 @@ int main()
 	Lab c(2, 3);
 
 	a.setOne(5);
-	int ab = 2;
-	a.setTwo(ab);
-	c.setAsSum(ab);
+	a.setTwo(6);
 
 	Lab b = a;
+	cout << endl;
+	passValue(a);
+	Lab d = passConstRef(c);
+	Lab e;
+	passRef(e);
 
-	vector<Lab> vec{ a,b,c };
-	Lab d(1, 0), e(4,3);
-	vec.push_back(d);
-	vec.push_back(e);
-	int total =0;
-	for (auto L : vec)
-	{
-		total += L.getSum();
-	}
-	cout << "Total sum of vector is " << total << endl;
+
+	cout << "Creating Vector..." << endl;
+	vector<Lab> vec{ a,b,c,d,e };
+	cout << "Finished creating vector" << endl;
+
 }	

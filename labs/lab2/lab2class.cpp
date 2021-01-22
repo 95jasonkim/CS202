@@ -23,23 +23,27 @@ Lab::~Lab()
 
 void Lab::setOne(int a)
 {
-	cout << "one is now" << a<< endl;
+	cout << "one is now " << a<< endl;
 	_one = a;
 }
 
-void Lab::setAsSum(int& ab)
+int Lab::getSum() const
 {
-	ab = _one+_two;
-	cout << "Value is now " << _one +_two << endl;
+	return _one+_two;
 }
 
-void Lab::setTwo(const int& abc)
+void Lab::setTwo(int abc)
 {
 	cout << "two is now " << abc << endl;
 	_two = abc;
 }
 
-int Lab::getSum()
+int Lab::getOne() const
 {
-	return _one + _two;
+	return _one;
+}
+
+int Lab::getTwo() const
+{
+	return _two;
 }

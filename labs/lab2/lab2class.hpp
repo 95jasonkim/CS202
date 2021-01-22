@@ -14,9 +14,10 @@ public:
 	~Lab();
 
 	void setOne(int a);
-	void setAsSum(int &ab);
-	void setTwo(const int& abc);
-	int getSum();
+	void setTwo(int abc);
+	int getSum() const;
+	int getOne() const;
+	int getTwo() const;
 private:
 	int _one, _two;
 };
