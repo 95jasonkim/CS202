@@ -1,42 +1,34 @@
 /**/
 #include "lab2class.hpp"
 
-Lab::Lab()
+Lab::Lab():_name("default")
 {
-	cout << "Called default constructor" << endl;
+	cout << "Called default constructor named default" << endl;
 }
 
-Lab::Lab(const Lab& L):_one(L._one), _two(L._two)
+Lab::Lab(const Lab& L):_name(L._name)
 {
-	cout << "Called copy constructor" << endl;
+	cout << "Called copy constructor for " << L._name<<endl;
 }
 
-Lab::Lab(int a, int b):_one(a), _two(b)
+Lab::Lab(string name):_name(name)
 {
-	cout << "Called constructor with parameters" << endl;
+	cout << "Called constructor with parameters called " << name<<endl;
 }
 
 Lab::~Lab()
 {
-	cout << "Called destructor" << endl;
+	cout << "Called destructor for " << _name<< endl;
 }
 
-void Lab::setOne(int a)
+void Lab::setName(string name)
 {
-	_one = a;
+	_name = name;
 }
 
-void Lab::setTwo(int abc)
+
+string Lab::getName() const
 {
-	_two = abc;
+	return _name;
 }
 
-int Lab::getOne() const
-{
-	return _one;
-}
-
-int Lab::getTwo() const
-{
-	return _two;
-}

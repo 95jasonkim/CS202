@@ -3,6 +3,8 @@
 #include<iostream>
 using std::cout;
 using std::endl;
+#include<string>
+using std::string;
 
 
 class Lab
@@ -10,15 +12,13 @@ class Lab
 public:
 	Lab();
 	Lab(const Lab& L);
-	Lab(int a, int b);
+	Lab(string name);
 	~Lab();
 
-	void setOne(int a);
-	void setTwo(int abc);
-	int getOne() const;
-	int getTwo() const;
+	void setName(string name);
+	string getName() const;
 private:
-	int _one, _two;
+	string _name;
 };
 
 
