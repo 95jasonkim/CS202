@@ -6,8 +6,13 @@ CS202 Time it 1
 #include <iostream>
 using std::cout;
 using std::endl;
+#include<Windows.h>
 
 int main()
 {
+	StopWatch S;
+	Sleep(500); // for testing
+	S.stop();
+	cout << S.seconds() >> endl;
 
 }
