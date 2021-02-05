@@ -14,3 +14,9 @@ void StopWatch::start()
 	_startTime = high_resolution_clock::now();
 }
 
+void StopWatch::stop()
+{
+	_endTime = high_resolution_clock::now();
+}
+
+
