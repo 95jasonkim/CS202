@@ -17,6 +17,7 @@ using std::vector;
 using std::list;
 #include<map>
 using std::map;
+#include<algorithm>
 
 
 int main()
@@ -30,10 +31,9 @@ int main()
 	ifstream fin(book);
 	vector<string> readVector;
 	list<string> readList;
-	map<int, string> readMap;
+	map<string, string> readMap;
 	StopWatch S;
 
-	int i = 0;
 	S.start();
 	while (true)
 	{
@@ -50,9 +50,17 @@ int main()
 		}
 		readVector.push_back(word); //for vector
 		//readList.push_back(word); //for list
-		//readMap[i] = word; // for map
-		//i++;
+		//readMap[word] = word; // for map
 	}
 	S.stop();
 	cout << S.seconds() << " seconds to read through." << endl;
+
+	S.start();
+	string findThis = "Gutenburg";
+	auto it = std::find(readVector.begin(), readVector.end(), findThis); // for searching through vector
+	//auto it2 = std::find(readList.begin(), readList.end(), findThis); // for searching through list
+	//auto it3 = readMap.find(findThis); // for searching through map
+	S.stop();
+	cout << S.seconds() << " seconds to find an element." << endl;
+
 }
