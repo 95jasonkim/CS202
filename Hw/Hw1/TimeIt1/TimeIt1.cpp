@@ -11,8 +11,8 @@ using std::endl;
 int main()
 {
 	StopWatch S;
-	Sleep(500); // for testing
+	Sleep(1234); // for testing
 	S.stop();
-	cout << S.seconds() >> endl;
-
+	cout << S.seconds() << endl;
+	cout << S.milliSeconds() << endl;
 }
