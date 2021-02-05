@@ -31,5 +31,5 @@ double StopWatch::seconds()
 double StopWatch::milliSeconds()
 {
 	duration<double> time = duration_cast<duration<double>>(_endTime - _startTime);
-	return duration_cast<std::chrono::milliseconds>(time).count();
+	return time.count() * 1000;
 }
