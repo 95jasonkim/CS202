@@ -33,7 +33,7 @@ int main()
 	list<string> readList;
 	map<string, string> readMap;
 	StopWatch S;
-
+	
 	S.start();
 	while (true)
 	{
