@@ -22,7 +22,7 @@ using std::vector;
 int main()
 {
 	StopWatch S;
-	int size=100000; // group size
+	int size=100000000; // group size 
 	random_device ran;
 	mt19937 gen(ran());
 	uniform_int_distribution<int> range(1, size);
