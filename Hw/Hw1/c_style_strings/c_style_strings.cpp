@@ -28,16 +28,31 @@ char* myStrdup(const char* x)
 	return copy;
 }
 
-//char* findx(const char* s, const char* x)
-//{
-//
-//}
+char* findx(const char* s, const char* x)
+{
+	auto start = myStrdup(s);
+	while (*s)
+	{
+		int count = 0;
+		auto find = myStrdup(x);
+		while (*find && *find == *start)
+		{
+			find++;
+			start++;
+			count++;
+		}
+		if (!*find) return start - count;
+		start++;
+	}
+	return NULL;
+}
 
 int main()
 {
 	//from my modern world history textbook
 	const char* text = "The Korean conflict was the first major military battle of the Cold War between democracy and communism.";
 	auto test = myStrdup(text);
-	cout << test;
-
+	cout << test << endl;
+	const char* findThis = "Cold War";
+	cout << findx(text, findThis) << endl;
 }
