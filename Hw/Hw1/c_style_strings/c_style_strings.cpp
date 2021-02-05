@@ -52,7 +52,10 @@ int main()
 	//from my modern world history textbook
 	const char* text = "The Korean conflict was the first major military battle of the Cold War between democracy and communism.";
 	auto test = myStrdup(text);
-	cout << test << endl;
+	cout << "Testing myStrdup function..." << endl;
+	cout << test << '\n'<<endl;
+
 	const char* findThis = "Cold War";
+	cout << "Testing findx function..." << endl;
 	cout << findx(text, findThis) << endl;
 }
