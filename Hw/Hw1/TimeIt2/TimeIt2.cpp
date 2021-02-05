@@ -63,4 +63,10 @@ int main()
 	S.stop();
 	cout << S.seconds() << " seconds to find an element." << endl;
 
+	S.start();
+	std::sort(readVector.begin(), readVector.end()); // for sorting through vector
+	//readList.sort(); // for sorting through list
+	//no sorting for map
+	S.stop();
+	cout << S.seconds() << " seconds to sort container." << endl;
 }
