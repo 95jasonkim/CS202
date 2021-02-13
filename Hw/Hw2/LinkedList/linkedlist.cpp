@@ -5,14 +5,20 @@ Linked List
 */
 
 #include"catch.hpp"
+#include<iostream>
+#include<list>
+using std::list;
 
-unsigned int Factorial(unsigned int number) {
-    return number <= 1 ? number : Factorial(number - 1) * number;
-}
+class Value {
+public:
+	void queue(int i)
+	{
+		_test.push_back(i);
+		_test.pop_front();
+	}
 
-TEST_CASE("Factorials are computed", "[factorial]") {
-    REQUIRE(Factorial(1) == 1);
-    REQUIRE(Factorial(2) == 2);
-    REQUIRE(Factorial(3) == 6);
-    REQUIRE(Factorial(10) == 3628800);
-}
+
+private:
+	list<int> _test = { 1,2,3,4 };
+};
+
