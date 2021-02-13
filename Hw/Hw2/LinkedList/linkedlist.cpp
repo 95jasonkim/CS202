@@ -33,7 +33,35 @@ public:
 		for (auto item : _test) std::cout << item << " ";
 		std::cout << std::endl;
 	}
-private:
+
 	list<int> _test = { 1,2,3,4 };
 };
 
+TEST_CASE("Class Value for usage of Linked Lists", "[Value]")
+{
+	Value test;
+	test.print();
+	SECTION("Queue, push_back and pop_front")
+	{
+		test.queue(5);
+		REQUIRE(test._test.back() == 5);
+		REQUIRE(test._test.front() != 1);
+		test.print();
+	}
+
+	SECTION("Stack, push_back and pop_back")
+	{
+		test.stack(5);
+		REQUIRE(test._test.back() != 5);
+		test.print();
+	}
+
+	SECTION("Insert and Find, insert number 3 in appropriate position")
+	{
+		test.insertNFind(3);
+		list<int> l = { 1,2,3,3,4 };
+		REQUIRE(test._test == l);
+		test.print();
+	}
+	std::cout << std::endl;
+}
