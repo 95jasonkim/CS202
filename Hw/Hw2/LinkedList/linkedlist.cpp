@@ -8,6 +8,8 @@ Linked List
 #include<iostream>
 #include<list>
 using std::list;
+#include<algorithm>
+
 
 class Value {
 public:
@@ -20,6 +22,11 @@ public:
 	{
 		_test.push_back(i);
 		_test.pop_back();
+	}
+	void insertNFind(int i)
+	{
+		auto it = std::find_if(_test.begin(), _test.end(), [i](int j) {return i < j; });
+		_test.insert(it, i);
 	}
 
 private:
