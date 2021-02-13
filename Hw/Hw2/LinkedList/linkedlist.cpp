@@ -28,7 +28,11 @@ public:
 		auto it = std::find_if(_test.begin(), _test.end(), [i](int j) {return i < j; });
 		_test.insert(it, i);
 	}
-
+	void print()
+	{
+		for (auto item : _test) std::cout << item << " ";
+		std::cout << std::endl;
+	}
 private:
 	list<int> _test = { 1,2,3,4 };
 };
