@@ -16,7 +16,11 @@ public:
 		_test.push_back(i);
 		_test.pop_front();
 	}
-
+	void stack(int i)
+	{
+		_test.push_back(i);
+		_test.pop_back();
+	}
 
 private:
 	list<int> _test = { 1,2,3,4 };
