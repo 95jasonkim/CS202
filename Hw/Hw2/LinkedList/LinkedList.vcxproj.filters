@@ -18,15 +18,12 @@
     <ClCompile Include="linkedlist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="catch_amalgamated.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="catch_amalgamated.hpp">
+    <ClInclude Include="catch.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
