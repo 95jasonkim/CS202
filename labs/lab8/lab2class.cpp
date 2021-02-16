@@ -4,21 +4,25 @@
 Lab::Lab()
 {
 	cout << "Called default constructor" << endl;
+	_num++;
 }
 
 Lab::Lab(const Lab& L):_one(L._one), _two(L._two)
 {
 	cout << "Called copy constructor" << endl;
+	_num++;
 }
 
 Lab::Lab(int a, int b):_one(a), _two(b)
 {
 	cout << "Called constructor with parameters" << endl;
+	_num++;
 }
 
 Lab::~Lab()
 {
 	cout << "Called destructor" << endl;
+	_num--;
 }
 
 void Lab::setOne(int a)
@@ -46,4 +50,11 @@ int Lab::getOne() const
 int Lab::getTwo() const
 {
 	return _two;
+}
+
+int Lab::_num = 0;
+
+int Lab::getNum()
+{
+	return _num;
 }

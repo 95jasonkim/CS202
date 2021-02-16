@@ -18,8 +18,11 @@ public:
 	int getSum() const;
 	int getOne() const;
 	int getTwo() const;
+	static int getNum();
 private:
-	int _one, _two;
+	int _one = 0;
+	int _two = 0;
+	static int _num;
 };
 
 
