@@ -19,8 +19,7 @@ public:
 	int getOne() const;
 	int getTwo() const;
 private:
-	int _one = 0;
-	int _two = 0;
+	int _one, _two;
 };
 
 
