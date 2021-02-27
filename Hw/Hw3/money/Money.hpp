@@ -10,6 +10,7 @@ class Money
 {
 	friend std::ostream& operator<<(std::ostream&, const Money& M);
 	friend bool operator==(const Money& Mlhs, const Money& Mrhs);
+	friend bool operator!=(const Money& Mlhs, const Money& Mrhs);
 public:
 	Money();
 	Money(int);

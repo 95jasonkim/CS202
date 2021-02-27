@@ -33,3 +33,8 @@ bool operator==(const Money& Mlhs, const Money& Mrhs)
 {
 	return Mlhs._amount == Mrhs._amount;
 }
+
+bool operator!=(const Money& Mlhs, const Money& Mrhs)
+{
+	return Mlhs._amount != Mrhs._amount;
+}
