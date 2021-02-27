@@ -14,6 +14,7 @@ class Money
 	friend bool operator<(const Money& Mlhs, const Money& Mrhs);
 	friend bool operator<=(const Money& Mlhs, const Money& Mrhs);
 	friend bool operator>(const Money& Mlhs, const Money& Mrhs);
+	friend bool operator>=(const Money& Mlhs, const Money& Mrhs);
 public:
 	Money();
 	Money(int);
