@@ -17,6 +17,10 @@ Money::Money(int dollar, int cent): _amount { dollar*100+cent }
 {
 }
 
+Money::Money(int cent) : _amount{ cent }
+{
+}
+
 Money::Money(const Money& M) : _amount{ M._amount }
 {
 }

@@ -24,6 +24,7 @@ public:
 	Money();
 	Money(double);
 	Money(int, int);
+	Money(int);
 	Money(const Money& M);
 	Money& operator+=(const Money& M);
 	Money& operator-=(const Money& M);
