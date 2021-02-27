@@ -9,7 +9,11 @@ Money::Money()
 {
 }
 
-Money::Money(int amount): _amount { amount }
+Money::Money(double dollar): _amount{(int)round(dollar * 100)}
+{
+}
+
+Money::Money(int dollar, int cent): _amount { dollar*100+cent }
 {
 }
 
@@ -92,7 +96,7 @@ Money operator*(double d, Money Mrhs)
 
 Money& Money::operator*=(double d)
 {
-	_amount *= d;
+	_amount = (int)round(_amount*d);
 	return *this;
 }
 
@@ -104,6 +108,6 @@ Money operator/(Money Mlhs, double d)
 
 Money& Money::operator/=(double d)
 {
-	_amount /= d;
+	_amount = (int)round(_amount / d);
 	return *this;
 }
