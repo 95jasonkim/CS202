@@ -58,3 +58,14 @@ bool operator>=(const Money& Mlhs, const Money& Mrhs)
 {
 	return Mlhs._amount >= Mrhs._amount;
 }
+
+Money operator+(const Money& Mlhs, const Money& Mrhs)
+{
+
+}
+
+Money& Money::operator+=(const Money& M)
+{
+	_amount += M._amount;
+	return *this;
+}
