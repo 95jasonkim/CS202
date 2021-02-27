@@ -56,3 +56,15 @@ vector<TokenAndPosition> readLines(std::istream& is)
 	return vec;
 }
 
+void printTokens(std::ostream& os, const vector<TokenAndPosition>& tokens)
+{
+	for (auto item : tokens)
+	{
+		os << "Line " << setw(4) << item._line;
+		os << ", Column " << setw(4) << item._column;
+		os << ": \"" << item._token << "\"" << endl;
+	}
+}
+
+
+
