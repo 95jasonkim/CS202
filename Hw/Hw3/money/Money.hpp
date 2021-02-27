@@ -9,13 +9,14 @@ CS202 hw3 money class hpp
 class Money
 {
 	friend std::ostream& operator<<(std::ostream&, const Money& M);
+	friend bool operator==(const Money& Mlhs, const Money& Mrhs);
 public:
 	Money();
 	Money(int);
 	Money(const Money& M);
 
 private:
-	int _amount=0.0;
+	int _amount=0;
 };
 
 

@@ -27,3 +27,9 @@ std::ostream& operator<<(std::ostream& os, const Money& M)
 	}
 	else return os << "$" << std::fixed << std::setprecision(2)<< dollars;
 }
+
+
+bool operator==(const Money& Mlhs, const Money& Mrhs)
+{
+	return Mlhs._amount == Mrhs._amount;
+}
