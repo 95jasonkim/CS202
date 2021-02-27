@@ -17,12 +17,15 @@ class Money
 	friend bool operator>=(const Money& Mlhs, const Money& Mrhs);
 	friend Money operator+(Money Mlhs, const Money& Mrhs);
 	friend Money operator-(Money Mlhs, const Money& Mrhs);
+	friend Money operator*(Money Mlhs, double d);
+	friend Money operator*(double d, Money Mrhs);
 public:
 	Money();
 	Money(int);
 	Money(const Money& M);
 	Money& operator+=(const Money& M);
 	Money& operator-=(const Money& M);
+	Money& operator*=(double d);
 
 private:
 	int _amount=0;

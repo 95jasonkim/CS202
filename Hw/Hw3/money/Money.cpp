@@ -61,8 +61,7 @@ bool operator>=(const Money& Mlhs, const Money& Mrhs)
 
 Money operator+(Money Mlhs, const Money& Mrhs)
 {
-	Mlhs += Mrhs;
-	return Mlhs;
+	return Mlhs += Mrhs;
 }
 
 Money& Money::operator+=(const Money& M)
@@ -73,12 +72,26 @@ Money& Money::operator+=(const Money& M)
 
 Money operator-(Money Mlhs, const Money& Mrhs)
 {
-	Mlhs -= Mrhs;
-	return Mlhs;
+	return 	Mlhs -= Mrhs;
 }
 
 Money& Money::operator-=(const Money& M)
 {
 	_amount -= M._amount;
+	return *this;
+}
+
+Money operator*(Money Mlhs, double d)
+{
+	return Mlhs *= d;
+}
+Money operator*(double d, Money Mrhs)
+{
+	return Mrhs *= d;
+}
+
+Money& Money::operator*=(double d)
+{
+	_amount *= d;
 	return *this;
 }
