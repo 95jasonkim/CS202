@@ -19,13 +19,16 @@ class Money
 	friend Money operator-(Money Mlhs, const Money& Mrhs);
 	friend Money operator*(Money Mlhs, double d);
 	friend Money operator*(double d, Money Mrhs);
+	friend Money operator/(Money Mlhs, double d);
 public:
 	Money();
-	Money(int);
+	Money(double);
+	Money(int, int);
 	Money(const Money& M);
 	Money& operator+=(const Money& M);
 	Money& operator-=(const Money& M);
 	Money& operator*=(double d);
+	Money& operator/=(double d);
 
 private:
 	int _amount=0;

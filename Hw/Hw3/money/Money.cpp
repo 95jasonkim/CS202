@@ -95,3 +95,15 @@ Money& Money::operator*=(double d)
 	_amount *= d;
 	return *this;
 }
+
+Money operator/(Money Mlhs, double d)
+{
+	return Mlhs /= d;
+}
+
+
+Money& Money::operator/=(double d)
+{
+	_amount /= d;
+	return *this;
+}
