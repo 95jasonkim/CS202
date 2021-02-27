@@ -70,3 +70,15 @@ Money& Money::operator+=(const Money& M)
 	_amount += M._amount;
 	return *this;
 }
+
+Money operator-(Money Mlhs, const Money& Mrhs)
+{
+	Mlhs -= Mrhs;
+	return Mlhs;
+}
+
+Money& Money::operator-=(const Money& M)
+{
+	_amount -= M._amount;
+	return *this;
+}
