@@ -8,7 +8,7 @@ class Box
 {
 public:
 	Box(int w,int h);
-
+	virtual ~Box();
 	int	getWidth() const;
 	int getHeight() const;
 	void setWidth(int w);

@@ -1,6 +1,11 @@
 #include "Box.hpp"
+#include<stdexcept>
 
 Box::Box(int w, int h): _width(w), _height(h)
+{
+}
+
+Box::~Box()
 {
 }
 
@@ -136,5 +141,7 @@ std::unique_ptr<Box> boxFactory(char c, int w, int h) // 'f','h','c'
 			return std::make_unique<HollowBox>(w, h);
 		case 'c':
 			return std::make_unique<CheckeredBox>(w, h);
+		default:
+			throw std::runtime_error("boxFactory() threw std::runtime_error(unknown box type)");
 	}
 }
