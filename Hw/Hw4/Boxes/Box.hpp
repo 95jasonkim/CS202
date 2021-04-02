@@ -28,6 +28,8 @@ class FilledBox : public Box
 public:
 	FilledBox();
 	FilledBox(int w, int h);
+	std::string type() const override;
+	void print(std::ostream& os) const;
 private:
 };
 
@@ -37,6 +39,7 @@ class HollowBox : public Box
 public:
 	HollowBox();
 	HollowBox(int w, int h);
+	std::string type() const override;
 private:
 };
 
@@ -46,6 +49,7 @@ class CheckeredBox : public Box
 public:
 	CheckeredBox();
 	CheckeredBox(int w, int h);
+	std::string type() const override;
 private:
 };
 

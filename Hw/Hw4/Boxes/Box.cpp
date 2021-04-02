@@ -52,3 +52,29 @@ CheckeredBox::CheckeredBox() : Box(1, 1)
 CheckeredBox::CheckeredBox(int w, int h) : Box(w, h)
 {
 }
+
+std::string FilledBox::type() const
+{
+	return std::string("Filled");
+}
+std::string HollowBox::type() const
+{
+	return std::string("Hollow");
+}
+std::string CheckeredBox::type() const
+{
+	return std::string("Checkered");
+}
+
+
+void FilledBox::print(std::ostream& os) const
+{
+	for (int h = 0; h < getHeight(); h++)
+	{
+		for (int w = 0; w < getWidth(); w++)
+		{
+			os << "x";
+		}
+		os << "\n";
+	}
+}
