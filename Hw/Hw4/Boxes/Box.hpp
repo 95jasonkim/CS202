@@ -26,6 +26,8 @@ std::ostream& operator<<(std::ostream& os, const Box& b);
 class FilledBox : public Box
 {
 public:
+	FilledBox();
+	FilledBox(int w, int h);
 private:
 };
 

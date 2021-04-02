@@ -28,3 +28,11 @@ std::ostream& operator<<(std::ostream& os, const Box& b)
 	b.print(os);
 	return os;
 }
+
+FilledBox::FilledBox() : Box(1, 1)
+{
+}
+
+FilledBox::FilledBox(int w, int h) : Box(w, h)
+{
+}
