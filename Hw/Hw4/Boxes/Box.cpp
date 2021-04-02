@@ -84,7 +84,7 @@ void HollowBox::print(std::ostream& os) const
 
 	for (int h = 0; h < getHeight(); h++)
 	{
-		if (h == 0 || h == getHeight() - 1)
+		if (h == 0 || h == getHeight() - 1) // first or last line
 		{
 			for (int w = 0; w < getWidth(); w++) os << "x";
 			os << "\n";
@@ -93,7 +93,7 @@ void HollowBox::print(std::ostream& os) const
 		{
 			for (int w = 0; w < getWidth(); w++)
 			{
-				if (w == 0 || w == getWidth() - 1) os << "x";
+				if (w == 0 || w == getWidth() - 1) os << "x"; 
 				else os << " ";
 			}
 			os << "\n";
@@ -103,5 +103,25 @@ void HollowBox::print(std::ostream& os) const
 
 void CheckeredBox::print(std::ostream& os) const
 {
-
+	for (int h = 0; h < getHeight(); h++)
+	{
+		if (h % 2 == 0) //odd lines
+		{
+			for (int w = 0; w < getWidth(); w++)
+			{
+				if (w % 2 == 0)os << "x"; //odd pos
+				else os << " ";
+			}
+			os << "\n";
+		}
+		else //even lines
+		{
+			for (int w = 0; w < getWidth(); w++)
+			{
+				if (w % 2 == 0)os << " "; //odd pos
+				else os << "x";
+			}
+			os << "\n";
+		}
+	}
 }
