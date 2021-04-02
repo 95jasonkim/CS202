@@ -2,6 +2,7 @@
 #define BOX_HPP
 #include<iostream>
 #include<string>
+#include<memory>
 
 class Box
 {
@@ -55,6 +56,6 @@ public:
 private:
 };
 
-
+std::unique_ptr<Box> boxFactory(char c, int w, int h);
 
 #endif

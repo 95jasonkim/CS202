@@ -125,3 +125,16 @@ void CheckeredBox::print(std::ostream& os) const
 		}
 	}
 }
+
+std::unique_ptr<Box> boxFactory(char c, int w, int h) // 'f','h','c'
+{
+	switch (c)
+	{
+		case 'f':
+			return std::make_unique<FilledBox>(w, h);
+		case 'h':
+			return std::make_unique<HollowBox>(w, h);
+		case 'c':
+			return std::make_unique<CheckeredBox>(w, h);
+	}
+}
