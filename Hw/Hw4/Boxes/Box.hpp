@@ -8,18 +8,19 @@ class Box
 public:
 	Box(int w,int h);
 
-	int	getWidth();
-	int getHeight();
+	int	getWidth() const;
+	int getHeight() const;
 	void setWidth(int w);
 	void setHeight(int h);
 
-	virtual void print(std::ostream& os)=0;
-	virtual std::string type() = 0;
+	virtual void print(std::ostream& os) const =0;
+	virtual std::string type() const = 0;
 
 private:
 	int _width;
 	int _height;
 };
 
+std::ostream& operator<<(std::ostream& os, const Box& b);
 
 #endif

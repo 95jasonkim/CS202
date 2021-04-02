@@ -4,11 +4,11 @@ Box::Box(int w, int h): _width(w), _height(h)
 {
 }
 
-int	Box::getWidth()
+int	Box::getWidth() const
 {
 	return _width;
 }
-int Box::getHeight()
+int Box::getHeight() const
 {
 	return _height;
 }
@@ -20,4 +20,10 @@ void Box::setWidth(int w)
 void Box::setHeight(int h)
 {
 	_height = h;
+}
+
+
+std::ostream& operator<<(std::ostream& os, const Box& b)
+{
+	b.print(os);
 }
