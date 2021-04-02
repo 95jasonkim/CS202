@@ -36,3 +36,11 @@ FilledBox::FilledBox() : Box(1, 1)
 FilledBox::FilledBox(int w, int h) : Box(w, h)
 {
 }
+
+HollowBox::HollowBox() : Box(1, 1)
+{
+}
+
+HollowBox::HollowBox(int w, int h) : Box(w, h)
+{
+}

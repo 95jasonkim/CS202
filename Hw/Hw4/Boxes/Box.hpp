@@ -35,6 +35,8 @@ private:
 class HollowBox : public Box
 {
 public:
+	HollowBox();
+	HollowBox(int w, int h);
 private:
 };
 
