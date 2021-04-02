@@ -26,4 +26,5 @@ void Box::setHeight(int h)
 std::ostream& operator<<(std::ostream& os, const Box& b)
 {
 	b.print(os);
+	return os;
 }

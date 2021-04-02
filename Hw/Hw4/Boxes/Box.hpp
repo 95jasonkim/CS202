@@ -23,4 +23,26 @@ private:
 
 std::ostream& operator<<(std::ostream& os, const Box& b);
 
+class FilledBox : public Box
+{
+public:
+private:
+};
+
+
+class HollowBox : public Box
+{
+public:
+private:
+};
+
+
+class CheckeredBox : public Box
+{
+public:
+private:
+};
+
+
+
 #endif
