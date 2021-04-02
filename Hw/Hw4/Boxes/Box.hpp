@@ -44,6 +44,8 @@ private:
 class CheckeredBox : public Box
 {
 public:
+	CheckeredBox();
+	CheckeredBox(int w, int h);
 private:
 };
 

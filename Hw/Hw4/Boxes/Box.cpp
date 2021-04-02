@@ -44,3 +44,11 @@ HollowBox::HollowBox() : Box(1, 1)
 HollowBox::HollowBox(int w, int h) : Box(w, h)
 {
 }
+
+CheckeredBox::CheckeredBox() : Box(1, 1)
+{
+}
+
+CheckeredBox::CheckeredBox(int w, int h) : Box(w, h)
+{
+}
