@@ -12,3 +12,12 @@ int Box::getHeight()
 {
 	return _height;
 }
+
+void Box::setWidth(int w)
+{
+	_width = w;
+}
+void Box::setHeight(int h)
+{
+	_height = h;
+}

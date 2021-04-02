@@ -8,6 +8,8 @@ public:
 
 	int	getWidth();
 	int getHeight();
+	void setWidth(int w);
+	void setHeight(int h);
 private:
 	int _width;
 	int _height;
