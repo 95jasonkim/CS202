@@ -78,3 +78,30 @@ void FilledBox::print(std::ostream& os) const
 		os << "\n";
 	}
 }
+
+void HollowBox::print(std::ostream& os) const
+{
+
+	for (int h = 0; h < getHeight(); h++)
+	{
+		if (h == 0 || h == getHeight() - 1)
+		{
+			for (int w = 0; w < getWidth(); w++) os << "x";
+			os << "\n";
+		}
+		else
+		{
+			for (int w = 0; w < getWidth(); w++)
+			{
+				if (w == 0 || w == getWidth() - 1) os << "x";
+				else os << " ";
+			}
+			os << "\n";
+		}
+	}
+}
+
+void CheckeredBox::print(std::ostream& os) const
+{
+
+}

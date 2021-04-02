@@ -40,6 +40,7 @@ public:
 	HollowBox();
 	HollowBox(int w, int h);
 	std::string type() const override;
+	void print(std::ostream& os) const;
 private:
 };
 
@@ -50,6 +51,7 @@ public:
 	CheckeredBox();
 	CheckeredBox(int w, int h);
 	std::string type() const override;
+	void print(std::ostream& os) const;
 private:
 };
 
