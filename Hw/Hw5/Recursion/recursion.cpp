@@ -13,13 +13,14 @@ int fib(int n)
 
 int fib_loop(int n)
 {
+	if (n == 0 || n == 1) return n;
 	int j=0;
 	int k=1;
-	int h;
+	int h=0;
 	for (int i = 0; i<=n ; i++)
 	{
 		if (i > 1)
-		{
+		{	
 			h = j + k;
 			j = k;
 			k = h;
@@ -30,5 +31,10 @@ int fib_loop(int n)
 
 int main()
 {
-	cout << fib_loop(7) << endl;
+	cout << "fib\t fib_loop" << endl;
+	for (int i = 0; i < 15; i++)
+	{
+		cout << fib(i) << "\t " << fib_loop(i) << endl;
+	}
+
 }
