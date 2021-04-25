@@ -32,7 +32,8 @@ int fib_loop(int n)
 int main()
 {
 	cout << "fib\t fib_loop" << endl;
-	for (int i = 0; i < 15; i++)
+	int max = 30;
+	for (int i = 0; i <= max; i++)
 	{
 		cout << fib(i) << "\t " << fib_loop(i) << endl;
 	}
