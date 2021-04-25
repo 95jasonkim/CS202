@@ -5,14 +5,14 @@
 template <typename T>
 void myWrite(std::ostream& os,const T& t)
 {
-	os.write(reinterpret_cast<const char *>(t), sizeof(t));
+	os.write(reinterpret_cast<const char *>(&t), sizeof(t));
 }
 
 
 template<typename T>
-void myRead(const std::istream& is, T& t)
+void myRead(std::istream& is, T& t)
 {
-	is.read(reinterpret_cast<char*>(t), sizeof(T));
+	is.read(reinterpret_cast<char*>(&t), sizeof(t));
 }
 
 #endif

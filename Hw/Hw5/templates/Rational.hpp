@@ -9,27 +9,32 @@ class Rational
 {
 	template<typename F>
 	friend std::ostream& operator<<(std::ostream&, const Rational<F>& rhs);
+
 	template<typename F>
-	friend Rational operator+(const Rational<F>& lhs, const Rational<F>& rhs);
+	friend Rational<F> operator+(const Rational<F>& lhs, const Rational<F>& rhs);
+	
 	template<typename F>
-	friend Rational operator-(const Rational<F>& lhs);
+	friend Rational<F> operator-(const Rational<F>& lhs);
+	
 	template<typename F>
 	friend bool operator==(const Rational<F>& lhs, const Rational<F>& rhs);
+	
 	template<typename F>
 	friend bool operator<(const Rational<F>& lhs, const Rational<F>& rhs);
 
 public:
 	Rational();
+	Rational(const T&);
 	Rational(const T&, const T &); //NOLINT(google-explicit-constructor): Allow implicit conversion from int
-	
-	Rational& operator+=(const Rational& rhs);
-	Rational& operator-=(const Rational& rhs);
-	Rational& operator*=(const Rational& rhs);
-	Rational& operator/=(const Rational& rhs);
-	Rational& operator++();        //prefix ++
-	Rational operator++(int); //postfix ++
-	Rational& operator--();        //prefix --
-	Rational operator--(int); //postfix --
+
+	Rational<T>& operator+=(const Rational<T>& rhs);
+	Rational<T>& operator-=(const Rational<T>& rhs);
+	Rational<T>& operator*=(const Rational<T>& rhs);
+	Rational<T>& operator/=(const Rational<T>& rhs);
+	Rational<T>& operator++();        //prefix ++
+	Rational<T> operator++(int); //postfix ++
+	Rational<T>& operator--();        //prefix --
+	Rational<T> operator--(int); //postfix --
 private:
 	void reduce();
 
@@ -40,6 +45,11 @@ private:
 template<typename T>
 Rational<T>::Rational() {
 	_numerator = (T)1;
+	_denominator = (T)1;
+}
+
+template<typename T>
+Rational<T>::Rational(const T& num) :_numerator(num){
 	_denominator = (T)1;
 }
 
@@ -56,12 +66,6 @@ std::ostream& operator<<(std::ostream& os, const Rational<F>& rhs) {
 	return os;
 }
 
-template<typename F>
-Rational<F> operator+(const Rational<F>& lhs, const Rational<F>& rhs) { //canonical
-	auto temp{ lhs };
-	temp += rhs;
-	return temp;
-}
 
 template<typename R>
 Rational<R>& Rational<R>::operator+=(const Rational<R>& rhs) {
@@ -70,6 +74,13 @@ Rational<R>& Rational<R>::operator+=(const Rational<R>& rhs) {
 	_denominator *= rhs._denominator;
 	reduce();
 	return *this;
+}
+
+template<typename F>
+Rational<F> operator+(const Rational<F>& lhs, const Rational<F>& rhs) { //canonical
+	auto temp{ lhs };
+	temp += rhs;
+	return temp;
 }
 
 template<typename R>
