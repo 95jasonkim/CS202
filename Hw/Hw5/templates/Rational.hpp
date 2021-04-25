@@ -44,7 +44,7 @@ private:
 
 template<typename T>
 Rational<T>::Rational() {
-	_numerator = (T)1;
+	_numerator = (T)0;
 	_denominator = (T)1;
 }
 
