@@ -107,6 +107,7 @@ Rational<F> operator-(const Rational<F>& lhs, const Rational<F>& rhs) {
 template<typename R>
 Rational<R>& Rational<R>::operator-=(const Rational<R>& rhs) { //Canonical
 	*this = *this - rhs; //uses Rational::operator- to define operator-=
+	reduce();
 	return *this;
 }
 
@@ -114,12 +115,15 @@ template<typename R>
 Rational<R>& Rational<R>::operator*=(const Rational<R>& rhs) {
 	_numerator *= rhs._numerator;
 	_denominator *= rhs._denominator;
+	reduce();
 	return *this;
 }
 
 template<typename R>
 Rational<R>& Rational<R>::operator/=(const Rational<R>& rhs) {
-	return *this *= {rhs._denominator, rhs._numerator};
+	*this *= {rhs._denominator, rhs._numerator};
+	reduce();
+	return *this;
 }
 
 // pass lhs by value because we were going to copy it anyway
