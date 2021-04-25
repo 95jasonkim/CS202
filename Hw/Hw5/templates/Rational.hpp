@@ -10,18 +10,18 @@ class Rational
 	template<typename F>
 	friend std::ostream& operator<<(std::ostream&, const Rational<F>& rhs);
 	template<typename F>
-	friend Rational operator+(const Rational& lhs, const Rational<F>& rhs);
+	friend Rational operator+(const Rational<F>& lhs, const Rational<F>& rhs);
 	template<typename F>
 	friend Rational operator-(const Rational<F>& lhs);
 	template<typename F>
-	friend bool operator==(const Rational<F>& lhs, const Rational<F>l& rhs);
+	friend bool operator==(const Rational<F>& lhs, const Rational<F>& rhs);
 	template<typename F>
 	friend bool operator<(const Rational<F>& lhs, const Rational<F>& rhs);
 
 public:
-
-	Rational(T, T = 1); //NOLINT(google-explicit-constructor): Allow implicit conversion from int
-
+	Rational();
+	Rational(const T&, const T &); //NOLINT(google-explicit-constructor): Allow implicit conversion from int
+	
 	Rational& operator+=(const Rational& rhs);
 	Rational& operator-=(const Rational& rhs);
 	Rational& operator*=(const Rational& rhs);
@@ -38,7 +38,13 @@ private:
 };
 
 template<typename T>
-Rational<T>::Rational(T num, T den) : _numerator(num), _denominator(den) {
+Rational<T>::Rational() {
+	_numerator = (T)1;
+	_denominator = (T)1;
+}
+
+template<typename T>
+Rational<T>::Rational(const T& num, const T& den) : _numerator(num), _denominator(den) {
 	reduce();
 }
 
