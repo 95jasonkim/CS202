@@ -42,14 +42,16 @@ Rational<T>::Rational(T num, T den) : _numerator(num), _denominator(den) {
 	reduce();
 }
 
-std::ostream& operator<<(std::ostream& os, const Rational& rhs) {
+template<typename F>
+std::ostream& operator<<(std::ostream& os, const Rational<F>& rhs) {
 	os << rhs._numerator;
 	if (rhs._denominator != 1)
 		os << "/" << rhs._denominator;
 	return os;
 }
 
-Rational operator+(const Rational& lhs, const Rational& rhs) { //canonical
+template<typename F>
+Rational<F> operator+(const Rational<F>& lhs, const Rational<F>& rhs) { //canonical
 	auto temp{ lhs };
 	temp += rhs;
 	return temp;
@@ -73,11 +75,13 @@ void Rational::reduce() {
 	}
 }
 
-Rational operator-(const Rational& lhs) {
+template<typename F>
+Rational<F> operator-(const Rational<F>& lhs) {
 	return { -lhs._numerator, lhs._denominator };
 }
 
-Rational operator-(const Rational& lhs, const Rational& rhs) {
+template<typename F>
+Rational<F> operator-(const Rational<F>& lhs, const Rational<F>& rhs) {
 	return lhs + -rhs;
 }
 
@@ -126,11 +130,13 @@ Rational Rational::operator--(int) {//postfix --
 	return copy;
 }
 
-bool operator==(const Rational& lhs, const Rational& rhs) {
+template<typename F>
+bool operator==(const Rational<F>& lhs, const Rational<F>& rhs) {
 	return lhs._numerator == rhs._numerator && lhs._denominator == rhs._denominator;
 }
 
-bool operator<(const Rational& lhs, const Rational& rhs) {
+template<typename F>
+bool operator<(const Rational<F>& lhs, const Rational<F>& rhs) {
 	return lhs._numerator * rhs._denominator < rhs._numerator* lhs._denominator;
 }
 
