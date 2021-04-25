@@ -1,7 +1,7 @@
 #ifndef TEMPLATE_RATIONAL_HPP
 #define TEMPLATE_RATIONAL_HPP
-#include <iostream>
 
+#include <iostream>
 #include <numeric>
 
 template<typename T>
@@ -14,13 +14,14 @@ class Rational
 	template<typename F>
 	friend Rational operator-(const Rational<F>& lhs);
 	template<typename F>
-	friend bool operator==(const Rational<F>& lhs, const Rationa<F>l& rhs);
+	friend bool operator==(const Rational<F>& lhs, const Rational<F>l& rhs);
 	template<typename F>
 	friend bool operator<(const Rational<F>& lhs, const Rational<F>& rhs);
-	template<typename F>
 
 public:
-	Rational(R num, R den = 1); //NOLINT(google-explicit-constructor): Allow implicit conversion from int
+
+	Rational(T, T = 1); //NOLINT(google-explicit-constructor): Allow implicit conversion from int
+
 	Rational& operator+=(const Rational& rhs);
 	Rational& operator-=(const Rational& rhs);
 	Rational& operator*=(const Rational& rhs);
@@ -36,8 +37,8 @@ private:
 	T _denominator;
 };
 
-template<typename R>
-Rational<R>::Rational(R num, R den) : _numerator(num), _denominator(den) {
+template<typename T>
+Rational<T>::Rational(T num, T den) : _numerator(num), _denominator(den) {
 	reduce();
 }
 
