@@ -151,19 +151,23 @@ bool operator<(const Rational<F>& lhs, const Rational<F>& rhs) {
 	return lhs._numerator * rhs._denominator < rhs._numerator* lhs._denominator;
 }
 
-bool operator!=(const Rational& lhs, const Rational& rhs) {//canonical
+template<typename R>
+bool operator!=(const Rational<R>& lhs, const Rational<R>& rhs) {//canonical
 	return !(rhs == lhs);
 }
 
-bool operator>(const Rational& lhs, const Rational& rhs) {//canonical
+template<typename R>
+bool operator>(const Rational<R>& lhs, const Rational<R>& rhs) {//canonical
 	return rhs < lhs;
 }
 
-bool operator<=(const Rational& lhs, const Rational& rhs) {//canonical
+template<typename R>
+bool operator<=(const Rational<R>& lhs, const Rational<R>& rhs) {//canonical
 	return !(rhs > lhs);
 }
 
-bool operator>=(const Rational& lhs, const Rational& rhs) {//canonical
+template<typename R>
+bool operator>=(const Rational<R>& lhs, const Rational<R>& rhs) {//canonical
 	return !(rhs < lhs);
 }
 #endif
