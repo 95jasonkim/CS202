@@ -9,5 +9,10 @@ void myWrite(std::ostream& os,const T& t)
 }
 
 
+template<typename T>
+void myRead(const std::istream& is, T& t)
+{
+	is.read(reinterpret_cast<char*>(t), sizeof(T));
+}
 
 #endif
