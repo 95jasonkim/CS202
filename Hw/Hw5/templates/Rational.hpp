@@ -87,46 +87,55 @@ Rational<F> operator-(const Rational<F>& lhs, const Rational<F>& rhs) {
 	return lhs + -rhs;
 }
 
-Rational& Rational::operator-=(const Rational& rhs) { //Canonical
+template<typename R>
+Rational<R>& Rational<R>::operator-=(const Rational<R>& rhs) { //Canonical
 	*this = *this - rhs; //uses Rational::operator- to define operator-=
 	return *this;
 }
 
-Rational& Rational::operator*=(const Rational& rhs) {
+template<typename R>
+Rational<R>& Rational<R>::operator*=(const Rational<R>& rhs) {
 	_numerator *= rhs._numerator;
 	_denominator *= rhs._denominator;
 	return *this;
 }
 
-Rational& Rational::operator/=(const Rational& rhs) {
+template<typename R>
+Rational<R>& Rational<R>::operator/=(const Rational<R>& rhs) {
 	return *this *= {rhs._denominator, rhs._numerator};
 }
 
 // pass lhs by value because we were going to copy it anyway
-Rational operator*(Rational lhs, const Rational& rhs) { //Canonical
+template<typename R>
+Rational<R> operator*(Rational<R> lhs, const Rational<R>& rhs) { //Canonical
 	return lhs *= rhs;
 }
 
 // pass lhs by value because we were going to copy it anyway
-Rational operator/(Rational lhs, const Rational& rhs) { //Canonical
+template<typename R>
+Rational<R> operator/(Rational<R> lhs, const Rational<R>& rhs) { //Canonical
 	return lhs /= rhs;
 }
 
-Rational& Rational::operator++() {//prefix ++
+template<typename R>
+Rational<R>& Rational<R>::operator++() {//prefix ++
 	return *this += 1;
 }
 
-Rational Rational::operator++(int) {//postfix ++
+template<typename R>
+Rational<R> Rational<R>::operator++(int) {//postfix ++
 	auto copy{ *this };
 	++(*this);
 	return copy;
 }
 
-Rational& Rational::operator--() {//prefix --
+template<typename R>
+Rational<R>& Rational<R>::operator--() {//prefix --
 	return *this -= 1;
 }
 
-Rational Rational::operator--(int) {//postfix --
+template<typename R>
+Rational<R> Rational<R>::operator--(int) {//postfix --
 	auto copy{ *this };
 	--(*this);
 	return copy;
