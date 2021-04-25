@@ -57,7 +57,8 @@ Rational<F> operator+(const Rational<F>& lhs, const Rational<F>& rhs) { //canoni
 	return temp;
 }
 
-Rational& Rational::operator+=(const Rational& rhs) {
+template<typename R>
+Rational<R>& Rational<R>::operator+=(const Rational<R>& rhs) {
 	// a/b + c/d = (ad+bc)/ad
 	_numerator = _numerator * rhs._denominator + rhs._numerator * _denominator;
 	_denominator *= rhs._denominator;
@@ -65,7 +66,8 @@ Rational& Rational::operator+=(const Rational& rhs) {
 	return *this;
 }
 
-void Rational::reduce() {
+template<typename R>
+void Rational<R>::reduce() {
 	auto gcd = std::gcd(_numerator, _denominator);
 	_numerator /= gcd;
 	_denominator /= gcd;
